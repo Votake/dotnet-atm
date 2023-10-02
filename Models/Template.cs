@@ -1,8 +1,10 @@
-﻿namespace ATM.Models;
+﻿using Newtonsoft.Json.Converters;
+
+namespace ATM.Models;
 public class Template
 {
-
-    public string ApplyOrder { get; set; } = "";
+    [JsonConverter(typeof(StringEnumConverter))]
+    public ApplyOrder ApplyOrder { get; set; }
     public bool ReApplyAllOnPreBuild { get; set; }
 
     public string BuildServerEnviromentVariable = "CI";
@@ -21,4 +23,12 @@ public class Template
     public const string SettingFile = "atm.json";
 
 
+}
+
+public enum ApplyOrder
+{
+    Shared=0,
+    AfterShared=1,
+    BeforeShared=2,
+    WithoutShared=3
 }

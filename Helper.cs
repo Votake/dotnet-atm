@@ -284,7 +284,7 @@ namespace ATM
         public static void Output(string text, ConsoleColor consoleColor = ConsoleColor.Yellow)
         {
             Console.ForegroundColor = consoleColor;
-            Console.WriteLine("\t" + text.Replace(":'", ":" + Environment.NewLine + "'"));
+            Console.WriteLine("\t" + text.Replace(":'", ":" + Environment.NewLine + "\t" + "'"));
             Console.WriteLine();
             Console.ResetColor();
         }

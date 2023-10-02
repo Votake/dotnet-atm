@@ -33,13 +33,18 @@ namespace ATM
             MetaName = "name",
             Default = "")]
         public string? TemplateName { get; set; }
+
+        [Option(Default = false, HelpText = "The order in which this template will be applied, 0 or Shared, 1 or AfterShared, 2 or BeforeShared, 3 or WithoutShared")]
+        public string ApplyOrder { get; set; } = "1";
+
+
         public int Start()
         {
             if (string.IsNullOrEmpty(TemplateName))
                 Helper.ExitError("Invalid template name");
             var manager = new Manager();
             Helper.Output($"Creating:'{TemplateName}'");
-            manager.CreateNewTemplate(TemplateName!);
+            manager.CreateNewTemplate(TemplateName!,);
 
             return 0;
         }
