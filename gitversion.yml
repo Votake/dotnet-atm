@@ -1,0 +1,22 @@
+branches:
+  main:
+    tag: ''
+    regex: main
+  develop:
+    tag: 2-alpha
+    regex: dev(elop(ment)?)?
+  release:
+    tag: 4-beta
+    regex: ^r(eleases?)?[/-]
+  feature:
+    tag: 1-alpha.{BranchName}
+    regex: ^f(eatures?)?[/-]
+  hotfix:
+    tag: 3-beta
+    regex: ^(hot)?fix(es)?[/-]
+  pull-request:
+    tag: PullRequest
+    regex: ^(pull|pull\-requests|pr)[/-]
+  support:
+    tag: ''
+    regex: ^support[/-]
