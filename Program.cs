@@ -5,7 +5,6 @@ using ATM;
 using CommandLine;
 
 
-
 string searchPattern = @".\*.*"; // replace with your actual input
 
 Helper.Output(Environment.NewLine + DateTime.Now.ToString("F"));
