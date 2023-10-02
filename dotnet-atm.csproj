@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<PackAsTool>True</PackAsTool>
+		<AssemblyName>Votake.DotNet.ATM</AssemblyName>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<Title>Votake dotnet Automation Templates Manager</Title>
+		<Description>Votake dotnet Automation Templates Manager</Description>
+		<ToolCommandName>dotnet-atm</ToolCommandName>
+		<PackageOutputPath>$(userprofile)\source\votake\packages</PackageOutputPath>
+		<RootNamespace>ATM</RootNamespace>
+		<GenerateDocumentationFile>False</GenerateDocumentationFile>
+		<Authors>Votake</Authors>
+		<PackageProjectUrl>https://github.com/Votake/dotnet-atm</PackageProjectUrl>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<RepositoryUrl>https://github.com/Votake/dotnet-atm</RepositoryUrl>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="CommandLineParser" Version="2.9.1" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+		<PackageReference Include="YamlDotNet" Version="13.4.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="LICENSE">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	  <None Update="README.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	</ItemGroup>
+
+</Project>
