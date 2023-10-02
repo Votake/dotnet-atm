@@ -44,7 +44,7 @@ namespace ATM
                 Helper.ExitError("Invalid template name");
             var manager = new Manager();
             Helper.Output($"Creating:'{TemplateName}'");
-            manager.CreateNewTemplate(TemplateName!,);
+            manager.CreateNewTemplate(TemplateName!);
 
             return 0;
         }
