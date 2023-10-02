@@ -8,7 +8,7 @@ using CommandLine;
 
 string searchPattern = @".\*.*"; // replace with your actual input
 
-Helper.Output(Environment.NewLine + DateTime.Now.ToString("F"));
+Helper.Output(DateTime.Now.ToString("F"));
 
 
 return Parser.Default.ParseArguments<InitOptions, NewOptions>(args)

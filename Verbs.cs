@@ -25,7 +25,7 @@ namespace ATM
         }
     }
 
-    [Verb("new",HelpText = "Creates new template in the templates root directory")]
+    [Verb("new",HelpText = "Creates new empty template in the templates root directory")]
     public class NewOptions : IVerb
     {
         [Value(0,
@@ -37,6 +37,9 @@ namespace ATM
         {
             if (string.IsNullOrEmpty(TemplateName))
                 Helper.ExitError("Invalid template name");
+            var manager = new Manager();
+            Helper.Output($"Creating:'{TemplateName}'");
+            manager.CreateNewTemplate(TemplateName!);
 
             return 0;
         }

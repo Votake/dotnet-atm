@@ -276,7 +276,7 @@ namespace ATM
         public static void ExitError(string error)
         {
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.Error.WriteLine(error);
+            Console.Error.WriteLine("\t" + error);
             Console.WriteLine();
             Console.ResetColor();
             Environment.Exit(1);
@@ -284,7 +284,7 @@ namespace ATM
         public static void Output(string text, ConsoleColor consoleColor = ConsoleColor.Yellow)
         {
             Console.ForegroundColor = consoleColor;
-            Console.WriteLine(text.Replace(":'", ":" + Environment.NewLine + "'"));
+            Console.WriteLine("\t" + text.Replace(":'", ":" + Environment.NewLine + "'"));
             Console.WriteLine();
             Console.ResetColor();
         }

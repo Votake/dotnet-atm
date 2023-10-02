@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "dotnet-atm": {
+      "commandName": "Project",
+      "commandLineArgs": "new \"nuget package\""
+    }
+  }
+}
