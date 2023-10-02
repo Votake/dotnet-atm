@@ -8,6 +8,7 @@ namespace ATM.Models;
 
 public class GitVersionConfigYaml
 {
+    public string mode { get; set; } = "ContinuousDeployment";
     public Dictionary<string, GitVersionBranchConfigs> branches { get; set; } = new Dictionary<string, GitVersionBranchConfigs>();
 
     public GitVersionConfigYaml()
