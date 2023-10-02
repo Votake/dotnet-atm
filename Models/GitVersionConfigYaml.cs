@@ -3,12 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using YamlDotNet.Serialization;
 
 namespace ATM.Models;
 
 public class GitVersionConfigYaml
 {
-    public string mode { get; set; } = "ContinuousDeployment";
+    public string Mode { get; set; } = "ContinuousDeployment";
+
+    [YamlMember(Alias = "continuous-delivery-fallback-tag",ApplyNamingConventions =false )]
+    public string ContinuousDeliveryFallbackTag { get; set; } = "";
+
     public Dictionary<string, GitVersionBranchConfigs> branches { get; set; } = new Dictionary<string, GitVersionBranchConfigs>();
 
     public GitVersionConfigYaml()
