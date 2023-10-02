@@ -25,17 +25,19 @@ namespace ATM
         }
     }
 
-    [Verb("test")]
-    public class TestOptions : IVerb
+    [Verb("new",HelpText = "Creates new template in the templates root directory")]
+    public class NewOptions : IVerb
     {
         [Value(0,
-            HelpText = "The path to your templates root directory",
-            MetaName = "TemplatesRoot",
-            Default = ".\\dotnet-ATM")]
-        public string? TemplatesRoot { get; set; }
+            HelpText = "Template Name",
+            MetaName = "name",
+            Default = "")]
+        public string? TemplateName { get; set; }
         public int Start()
         {
-            Helper.Output("test verb");
+            if (string.IsNullOrEmpty(TemplateName))
+                Helper.ExitError("Invalid template name");
+
             return 0;
         }
     }
